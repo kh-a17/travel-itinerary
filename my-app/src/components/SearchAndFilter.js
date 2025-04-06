@@ -33,7 +33,6 @@ function SearchAndFilter() {
       const response = await axios.get('http://localhost:5000/api/posts/get-post-info', {
         params: query,
       });
-
       navigate('/view-post', { state: { results: response.data, filters: query } });
     } catch (err) {
       console.error('❌ Failed to fetch itineraries:', err);

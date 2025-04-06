@@ -5,7 +5,7 @@ const placesVisitedSchema = new mongoose.Schema({
         type: String,
     },
     rating: {
-        type: Number, 
+        type: Number,
     }
 });
 
@@ -56,7 +56,9 @@ const itinerarySchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
-    itinerary: [dayItinerarySchema]
+    itinerary: [dayItinerarySchema],
+    restaurants: [],
+    mode_of_transport: []
 });
 
 module.exports = mongoose.model('PostCreate', itinerarySchema);
