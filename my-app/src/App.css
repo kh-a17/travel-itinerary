@@ -1,9 +1,10 @@
 /* Background of the entire page */
-body {
+html, body, #root {
+  height: auto;
   margin: 0;
   padding: 0;
-  height: 100vh;
-  font-family: Arial, sans-serif;
+  overflow-y: auto;
+  background-color: #1a1724; /* dark base bg if needed */
 }
 
 /* Full-page animated background with image */

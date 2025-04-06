@@ -1,10 +1,13 @@
 import React, { useState, useRef } from 'react';
-import '../Speech-to-Text/SpeechToText.css'
+import { useNavigate } from 'react-router-dom';
+import '../Speech-to-Text/SpeechToText.css';
+import Navbar from '../Navbar'; // ✅ Navbar import
 
 const VoiceInput = () => {
   const [isListening, setIsListening] = useState(false);
   const [transcript, setTranscript] = useState('');
   const recognitionRef = useRef(null);
+  const navigate = useNavigate();
 
   const startListening = () => {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -42,16 +45,33 @@ const VoiceInput = () => {
     setIsListening(false);
   };
 
+  const handleSubmit = () => {
+    // Optional: send transcript to backend
+    navigate('/thank-you');
+  };
+
   return (
-    <div className='speech-to-text-wrapper'>
-      <h3>Speak Your Experience</h3>
-      <button onClick={isListening ? stopListening : startListening} className='button-style'>
-        {isListening ? '🛑 Stop Listening' : '🎙️ Start Listening'}
-      </button>
-      <textarea rows="10" cols="80" value={transcript} onChange={(e) => setTranscript(e.target.value)}
-        placeholder="Please suggest places to visit, restaurants and how to roam around" className='text-area'
-      />
-    </div>
+    <>
+      <Navbar /> {/* ✅ Add Navbar at the top */}
+      <div className='speech-to-text-wrapper' style={{ paddingTop: '100px' }}>
+        <h3>Speak Your Experience</h3>
+        <button onClick={isListening ? stopListening : startListening} className='button-style'>
+          {isListening ? '🛑 Stop Listening' : '🎙️ Start Listening'}
+        </button>
+        <textarea
+          rows="10"
+          cols="80"
+          value={transcript}
+          onChange={(e) => setTranscript(e.target.value)}
+          placeholder="Please suggest places to visit, restaurants and how to roam around"
+          className='text-area'
+        />
+        <button className='submit-button' onClick={handleSubmit}>
+          Submit
+        </button>
+      </div>
+    </>
   );
 };
+
 export default VoiceInput;

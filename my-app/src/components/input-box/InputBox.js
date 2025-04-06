@@ -18,6 +18,7 @@ const InputBox = ({ placeholder, className, sendDataToParent }) => {
             value={data}
             onChange={(e) => setData(e.target.value)}
         />
+        
     );
 }
 

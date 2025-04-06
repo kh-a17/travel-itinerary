@@ -34,14 +34,11 @@
   
   /* 💬 Main content container */
   .home-container {
-    z-index: 1;
+    padding-top: 100px; /* Prevent navbar overlap */
     text-align: center;
-    backdrop-filter: blur(6px);
-    padding: 40px;
-    border-radius: 20px;
-    background: rgba(0, 0, 0, 0.292);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    color: white;
   }
+  
   
   /* 🌟 Title */
   .home-title {
