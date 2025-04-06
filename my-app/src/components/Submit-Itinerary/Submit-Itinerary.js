@@ -7,19 +7,12 @@ import FilterTile from '../filter-tile/FilterTile';
 import InputBox from '../input-box/InputBox';
 
 const SubmitItinerary = () => {
-<<<<<<< HEAD
-  const [noOfDays, selectNonOfDays] = useState([]);
-  const [formSubmit, setFormSubmit] = useState(false);
-  const navigate = useNavigate();
-
-=======
   const [noOfDays, selectNonOfDays] = useState([])
   const [formSubmit, setFormSubmit] = useState(false)
   const [itineraryDetails, setItineraryDetails] = useState([]); // State to store details of each day
 
   const navigate = useNavigate();
 
->>>>>>> 607655b303fbfa3851d8dd6cea7a8c0ba94e4c09
   const nonOfDaysSelected = (noOfDaysSelect) => {
     const list = [];
     for (let i = 1; i <= noOfDaysSelect; i++) {
@@ -28,16 +21,9 @@ const SubmitItinerary = () => {
     selectNonOfDays(list);
   };
 
-<<<<<<< HEAD
-  const onSubmit = () => {
-    setFormSubmit(true);
-    navigate('/thank-you'); // ✅ changed to thank-you
-  };
-=======
   function handleDataFromChild(data) {
     localStorage.setItem('acco', data)
   }
->>>>>>> 607655b303fbfa3851d8dd6cea7a8c0ba94e4c09
 
   // Handle places visited data
   const handlePlacedVisited = (day, place, rating) => {
@@ -130,10 +116,6 @@ const SubmitItinerary = () => {
 
           <h2>Accomodation</h2>
           <div>
-<<<<<<< HEAD
-            <div className="filter-wrapper">
-              <InputBox placeholder="Please enter place" className="acco-input" />
-=======
             <div class="filter-wrapper">
               <input
                 type="text"
@@ -141,41 +123,11 @@ const SubmitItinerary = () => {
                 className='input-text-wrapper'
                 onBlur={(e) => handleDataFromChild(e.target.value)} // Default rating of 5
               />
->>>>>>> 607655b303fbfa3851d8dd6cea7a8c0ba94e4c09
             </div>
           </div>
         </>
       ) : (
         <div>
-<<<<<<< HEAD
-          <div className="day-wise-wrapper">
-            {noOfDays.map((key) => (
-              <div key={key} className="day-wrapper" style={{ width: `${100 / noOfDays.length}%` }}>
-                <div className="day-label">Day {key}</div>
-                <form className="form-wrapper">
-                  <label>Please list places visited in order:</label>
-                  <InputBox placeholder="Please enter place" />
-                  <StarRating />
-                  <InputBox placeholder="Please enter place" />
-                  <StarRating />
-                  <InputBox placeholder="Please enter place" />
-                  <StarRating />
-                  <InputBox placeholder="Please enter place" />
-                  <StarRating />
-                  <InputBox placeholder="Please enter place" />
-                  <StarRating />
-
-                  <label>Restaurants</label>
-                  <InputBox placeholder="Enjoy meals here" />
-                  <InputBox placeholder="Enjoy meals here" />
-                  <InputBox placeholder="Enjoy meals here" />
-
-                  <label>Mode of Transport</label>
-                  <InputBox placeholder="Roam around the cool way" />
-                </form>
-              </div>
-            ))}
-=======
           <div class="day-wise-wrapper">
             {noOfDays.map((key, index) => {
               return (
@@ -247,7 +199,6 @@ const SubmitItinerary = () => {
               );
             })}
 
->>>>>>> 607655b303fbfa3851d8dd6cea7a8c0ba94e4c09
           </div>
           <div className="filter-wrapper">
             <button onClick={onSubmit} className="submit-button">
