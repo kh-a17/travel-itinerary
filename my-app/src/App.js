@@ -6,6 +6,8 @@ import SearchAndFilter from './components/SearchAndFilter'; // ✅ import
 import SubmissionFilters from './components/Submission-Filters/Submission-Filters';
 import SubmitItinerary from './components/Submit-Itinerary/Submit-Itinerary';
 import ViewPage from './components/ViewPage/ViewPage'
+import ChoosePostType from './components/ChoosePostType/ChoosePostType'
+import VoiceInput from './components/Speech-to-Text/SpeechToText'
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/post-filters" element={<SubmissionFilters />} />
         <Route path="/submit-itinerary" element={<SubmitItinerary />} />
         <Route path="/view-post" element={<ViewPage />} />
+        <Route path="/post-type" element={<ChoosePostType />} />
+        <Route path="/speech-to-text" element={<VoiceInput />} />
       </Routes>
     </Router>
   );

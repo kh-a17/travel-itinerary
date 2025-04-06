@@ -29,6 +29,11 @@
             margin-top: 20px;
         }
 
+        .day-label{
+            text-align: center;
+            font-size: 20px;
+        }
+
         .add-icon {
             width: 30px;
             aspect-ratio: 1;

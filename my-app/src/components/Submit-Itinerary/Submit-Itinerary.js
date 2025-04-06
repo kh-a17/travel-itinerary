@@ -1,4 +1,5 @@
 import { use, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import './Submit-Itinerary.css';
 import StarRating from '../StarRating/StarRating'
@@ -8,6 +9,8 @@ import InputBox from '../input-box/InputBox'
 const SubmitItinerary = () => {
   const [noOfDays, selectNonOfDays] = useState([])
   const [formSubmit, setFormSubmit] = useState(false)
+  const navigate = useNavigate();
+
 
   const nonOfDaysSelected = (noOfDaysSelect) => {
     const list = [];
@@ -19,7 +22,7 @@ const SubmitItinerary = () => {
 
   const onSubmit = () => {
     setFormSubmit(true)
-    // handle page redirection
+    navigate('/post-type')
   }
 
   return (
@@ -50,7 +53,7 @@ const SubmitItinerary = () => {
             {noOfDays.map((key) => {
               return (
                 <div className='day-wrapper' style={{ width: `${100 / noOfDays.length}%` }}>
-                  <div>Day {key}</div>
+                  <div className='day-label'>Day {key}</div>
                   <form className='form-wrapper'>
                     <label>
                       Please list places visited in order:
@@ -85,7 +88,9 @@ const SubmitItinerary = () => {
               )
             })}
           </div>
-          <button onClick={onSubmit} className='submit-button'>Submit Itinerary</button>
+          <div className='filter-wrapper'>
+            <button onClick={onSubmit} className='submit-button'>Submit Itinerary</button>
+          </div>
         </div>
       }
     </div>
