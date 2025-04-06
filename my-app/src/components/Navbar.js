@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Navbar.css';
-import { FaUserCircle } from 'react-icons/fa'; // ✅ Import icon
+import { FaUserCircle } from 'react-icons/fa'; // Import icon
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ const Navbar = () => {
           Match Solo Travellers
         </button>
         
-        {/* ✅ User Icon */}
+        {/* User Icon */}
         <FaUserCircle className="profile-icon" onClick={() => navigate('/my-posts')} />
       </div>
     </nav>

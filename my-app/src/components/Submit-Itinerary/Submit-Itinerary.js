@@ -62,12 +62,12 @@ const SubmitItinerary = () => {
     }));
 
     return {
-      city_name: "Paris",  // Static value or replace it with user input if needed
+      city_name: localStorage.getItem('cityName'),  // Static value or replace it with user input if needed
       age: localStorage.getItem('age'),
       group: localStorage.getItem('group'),
       season: localStorage.getItem('season'),
       budget: localStorage.getItem('budget'),
-      accommodation: localStorage.getItem('acco'), // Get accommodation from the state
+      accomodation: localStorage.getItem('acco'), // Get accommodation from the state
       no_of_days: noOfDays.length,
       itinerary: itinerary,
     };

@@ -1,14 +1,14 @@
 import React from 'react';
 import './ChoosePostType.css';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../Navbar'; // ✅ Adjust path if needed
+import Navbar from '../Navbar'; // Adjust path if needed
 
 const ChoosePostType = () => {
   const navigate = useNavigate();
 
   return (
     <>
-      <Navbar /> {/* ✅ Navbar added */}
+      <Navbar /> {/* Navbar added */}
       <div className="home-background">
         {/* Optional background video if you want */}
         {/* <video autoPlay muted loop playsInline className="bg-video">

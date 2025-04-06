@@ -6,10 +6,13 @@ import { useNavigate } from 'react-router-dom';
 const SubmissionFilters = () => {
   const navigate = useNavigate();
 
-  const [filter, selectFilter] = useState('age');
+  const [filter, selectFilter] = useState('city');
 
   const filterSelected = (selectedFilter) => {
-    if (filter === 'age') {
+    if (filter === 'city') {
+      localStorage.setItem('cityName', selectedFilter); // Store the selected age range
+    }
+    else if (filter === 'age') {
       localStorage.setItem('age', selectedFilter); // Store the selected age range
       selectFilter('group');
     }
@@ -30,6 +33,18 @@ const SubmissionFilters = () => {
   return (
     <div className="submission-wrapper">
       <form>
+        {filter === 'city' && <div>
+          <h1>Name of the city</h1>
+          <div className='input-button-wrapper'>
+            <input
+              type="text"
+              placeholder="Name of the city"
+              className='input-text-wrapper'
+              onBlur={(e) => filterSelected(e.target.value)} // Default rating of 5
+            />
+            <button className='button-style' onClick={() => selectFilter('age')}>Next</button>
+          </div>
+        </div>}
         {filter === "age" && <div>
           <h1>Age</h1>
           <div className="filter-wrapper">
@@ -75,4 +90,3 @@ const SubmissionFilters = () => {
 }
 
 export default SubmissionFilters;
- 

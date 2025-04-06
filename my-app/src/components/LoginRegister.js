@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthForm from './AuthForm';
 import './AuthForm.css';
-import BgVideo from '../assets/Bg2.mp4'; // ✅ Make sure the path and file name match
+import BgVideo from '../assets/Bg2.mp4'; // Make sure the path and file name match
 
 const LoginRegister = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -45,13 +45,13 @@ const LoginRegister = () => {
 
   return (
     <div className="video-background-wrapper">
-      {/* 🔁 Background Video */}
+      {/* Background Video */}
       <video autoPlay muted loop playsInline preload="auto" className="bg-video">
         <source src={BgVideo} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
-      {/* ✈️ Foreground Plane Animation and Form */}
+      {/* Foreground Plane Animation and Form */}
       <div className="plane-overlay">✈</div>
 
       <div className="auth-container">
