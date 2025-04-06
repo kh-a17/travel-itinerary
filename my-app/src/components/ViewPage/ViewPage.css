@@ -1,25 +1,38 @@
 /* Full Page Styling */
 .view-page {
-    padding: 30px;
-    background-color: #282333;
+    padding: 20px;
+    margin-top: 80px; /* ensures space below navbar */
     min-height: 100vh;
-    font-family: Arial, sans-serif;
-    color: #a6cdc4;
+    height: auto;
+    overflow-y: auto;
+    color: white;
   }
   
-  /* Horizontal Filter Bar */
-  .filter-bar {
+  
+.user-cards {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 25px;
-    background-color: #3e394c;
-    padding: 15px 25px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    font-weight: bold;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    flex-direction: column;
+    gap: 30px;
   }
+  
+  .user-card {
+    background-color: #3c3742;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  }
+  /* Fixing the filter bar text */
+  .filter-bar-horizontal {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+  }
+  
   
   .filter-bar span {
     margin: 8px 12px;

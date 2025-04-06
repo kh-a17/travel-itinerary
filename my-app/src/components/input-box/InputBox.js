@@ -1,5 +1,6 @@
 import './InputBox.css';
 
+
 const InputBox = ({ placeholder, className }) => {
 
     return (

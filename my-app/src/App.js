@@ -10,6 +10,7 @@ import ChoosePostType from './components/ChoosePostType/ChoosePostType'
 import VoiceInput from './components/Speech-to-Text/SpeechToText'
 import ThankYou from './components/ThankYou';
 
+
 function App() {
   return (
     <Router>
@@ -23,6 +24,7 @@ function App() {
         <Route path="/post-type" element={<ChoosePostType />} />
         <Route path="/speech-to-text" element={<VoiceInput />} />
         <Route path="/thank-you" element={<ThankYou />} />
+
       </Routes>
     </Router>
   );

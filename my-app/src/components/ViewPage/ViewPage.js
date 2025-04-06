@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ViewPage.css';
+import Navbar from '../Navbar'; // ✅ Make sure this path is correct
 
 const dummyData = [
   {
@@ -62,6 +63,8 @@ const ViewPage = () => {
 
   return (
     <div className="view-page">
+      <Navbar /> {/* ✅ Navbar included here */}
+
       <div className="filter-bar-horizontal">
         <span><strong>City:</strong> Paris</span>
         <span><strong>Age:</strong> 20-30</span>
