@@ -141,3 +141,7 @@ body {
     opacity: 0;
   }
 }
+.App {
+  text-align: center;
+  background-color: #282333;
+}
