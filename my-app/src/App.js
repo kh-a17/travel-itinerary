@@ -1,20 +1,15 @@
-import React from 'react';
-<<<<<<< HEAD
+import React from 'react'
 import './App.css';
-import LoginRegister from './components/LoginRegister';
+// import SubmissionFilters from './components/Submission-Filters/Submission-Filters'
+import SubmitItinerary from './components/Submit-Itinerary/Submit-Itinerary'
+import Dictaphone from "./components/Speech-to-Text/SpeechToText"
 
 function App() {
   return (
     <div className="App">
-      <LoginRegister />
+      <SubmitItinerary />
     </div>
   );
-=======
-import HomePage from './components/HomePage';
-
-function App() {
-  return <HomePage />;
->>>>>>> 41929539bcc0963a17a776a39e8141ad6e653b20
 }
 
 export default App;
