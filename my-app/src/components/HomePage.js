@@ -33,7 +33,7 @@ const HomePage = () => {
             <h2>📝 Post</h2>
             <p>Had an amazing trip? Share your story, highlights, and tips — and help fellow explorers plan their perfect journey!</p>
             <button className="home-button"
-                          onClick={() => navigate('/post-filters')} // ✅ navigate to search
+                          onClick={() => navigate('/post-type')} // ✅ navigate to search
                         >
               
               Post Your Experience</button>
