@@ -1,7 +1,7 @@
 import React from 'react';
 import './ThankYou.css';
 import bgVideo from '../assets/Bg2.mp4';
-import Navbar from './Navbar'; // ✅ Corrected path
+import Navbar from './Navbar'; // Corrected path
 
 const ThankYou = () => {
   return (

@@ -1,10 +1,10 @@
 import React from 'react';
 import './HomePage.css';
 import travelVideo from '../assets/Bg2.mp4';
-import { useNavigate } from 'react-router-dom'; // ✅ import
+import { useNavigate } from 'react-router-dom'; // import
 
 const HomePage = () => {
-  const navigate = useNavigate(); // ✅
+  const navigate = useNavigate(); // 
 
   return (
     <div className="home-background">
@@ -23,7 +23,7 @@ const HomePage = () => {
             <p>Looking for inspiration? Search for a city or activity and explore real itineraries shared by fellow travelers!</p>
             <button
               className="home-button"
-              onClick={() => navigate('/search')} // ✅ navigate to search
+              onClick={() => navigate('/search')} // navigate to search
             >
               Explore Itineraries
             </button>
@@ -33,7 +33,7 @@ const HomePage = () => {
             <h2>📝 Post</h2>
             <p>Had an amazing trip? Share your story, highlights, and tips — and help fellow explorers plan their perfect journey!</p>
             <button className="home-button"
-                          onClick={() => navigate('/post-type')} // ✅ navigate to search
+                          onClick={() => navigate('/post-type')} // navigate to search
                         >
               
               Post Your Experience</button>

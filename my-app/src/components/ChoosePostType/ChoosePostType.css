@@ -1,4 +1,4 @@
-/* 📽️ Background Video */
+/* Background Video */
 .bg-video {
     position: fixed;
     top: 37;
@@ -11,7 +11,7 @@
     pointer-events: none;
   }
   
-  /* 🔮 Container to hold video + blur overlay + content */
+  /* Container to hold video + blur overlay + content */
   .home-background {
     position: relative;
     height: 100vh;
@@ -23,7 +23,7 @@
     color: #a6cdc4;
   }
   
-  /* 🌫️ Overlay on top of video for contrast */
+  /* Overlay on top of video for contrast */
   .home-background::after {
     content: "";
     position: absolute;
@@ -32,7 +32,7 @@
     z-index: 0;
   }
   
-  /* 💬 Main content container */
+  /* Main content container */
   .home-container {
     padding-top: 100px; /* Prevent navbar overlap */
     text-align: center;
@@ -40,7 +40,7 @@
   }
   
   
-  /* 🌟 Title */
+  /* Title */
   .home-title {
     font-size: 2.5rem;
     color: white;
@@ -48,7 +48,7 @@
     margin-bottom: 10px;
   }
   
-  /* 🖋️ Subtitle with typing effect */
+  /* Subtitle with typing effect */
   .home-subtitle {
     font-weight: bold;
     border-right: 2px solid #000b09;
@@ -67,7 +67,7 @@
     50% { border-color: #a6cdc4 }
   }
   
-  /* 🧭 Card Grid */
+  /* Card Grid */
   .card-grid {
     display: flex;
     gap: 30px;
@@ -76,7 +76,7 @@
     font-weight: bold;
   }
   
-  /* 📦 Individual Cards */
+  /* Individual Cards */
   .card {
     width: 260px;
     padding: 25px;
@@ -103,7 +103,7 @@
     line-height: 1.4;
   }
   
-  /* 🖱️ Button Style */
+  /* Button Style */
   .home-button {
     margin-top: 15px;
     padding: 10px 18px;

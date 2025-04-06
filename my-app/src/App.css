@@ -12,7 +12,7 @@ html, body, #root {
   position: relative;
   height: 100vh;
   width: 100%;
-  background-image: url('./assets/bg1.jpg'); /* ✅ Your background image */
+  background-image: url('./assets/bg1.jpg'); /* Your background image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -80,7 +80,7 @@ html, body, #root {
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #282333; /* 🌈 Change this to your desired color */
+  background-color: #282333; /* Change this to your desired color */
 }
 
 .App {

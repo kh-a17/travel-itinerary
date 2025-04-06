@@ -23,3 +23,4 @@ const InputBox = ({ placeholder, className, sendDataToParent }) => {
 }
 
 export default InputBox;
+ 

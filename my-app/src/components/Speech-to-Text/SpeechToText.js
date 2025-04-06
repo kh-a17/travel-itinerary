@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Speech-to-Text/SpeechToText.css';
-import Navbar from '../Navbar'; // ✅ Navbar import
+import Navbar from '../Navbar'; // Navbar import
 
 const VoiceInput = () => {
   const [isListening, setIsListening] = useState(false);
@@ -52,7 +52,7 @@ const VoiceInput = () => {
 
   return (
     <>
-      <Navbar /> {/* ✅ Add Navbar at the top */}
+      <Navbar /> {/* Add Navbar at the top */}
       <div className='speech-to-text-wrapper' style={{ paddingTop: '100px' }}>
         <h3>Speak Your Experience</h3>
         <button onClick={isListening ? stopListening : startListening} className='button-style'>

@@ -1,94 +1,47 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ViewPage.css';
-import Navbar from '../Navbar'; // ✅ Make sure this path is correct
-
-const dummyData = [
-  {
-    username: 'John Doe',
-    city: 'Paris',
-    age: '20-30',
-    group: 'Solo',
-    season: 'Spring',
-    budget: '1000-2000',
-    days: [
-      {
-        day: 'Day 1',
-        places: ['Eiffel Tower', 'Louvre Museum'],
-        restaurants: ['Le Jules Verne', 'Chez Janou'],
-        transport: 'Metro',
-        topPlace: 'Eiffel Tower'
-      },
-      {
-        day: 'Day 2',
-        places: ['Montmartre', 'Notre-Dame'],
-        restaurants: ['Le Consulat', 'Cafe Panis'],
-        transport: 'Walking',
-        topPlace: 'Montmartre'
-      }
-    ]
-  },
-  {
-    username: 'Jane Smith',
-    city: 'Paris',
-    age: '20-30',
-    group: 'Solo',
-    season: 'Spring',
-    budget: '1000-2000',
-    days: [
-      {
-        day: 'Day 1',
-        places: ['Sainte-Chapelle', 'Seine River'],
-        restaurants: ['Le Petit Cler', 'Café de Flore'],
-        transport: 'Bike',
-        topPlace: 'Seine River'
-      },
-      {
-        day: 'Day 2',
-        places: ['Versailles Palace'],
-        restaurants: ['Angelina', 'Le Train Bleu'],
-        transport: 'Train',
-        topPlace: 'Versailles Palace'
-      }
-    ]
-  }
-];
+import Navbar from '../Navbar';
+import { useLocation } from 'react-router-dom';
 
 const ViewPage = () => {
-  const [posts, setPosts] = useState([]);
+  const location = useLocation();
+  const results = location.state?.results || [];
+  const filters = location.state?.filters || {};
 
-  useEffect(() => {
-    // Simulate fetch
-    setPosts(dummyData);
-  }, []);
-
+  console.log(results)
   return (
     <div className="view-page">
-      <Navbar /> {/* ✅ Navbar included here */}
-
+      <Navbar />
       <div className="filter-bar-horizontal">
-        <span><strong>City:</strong> Paris</span>
-        <span><strong>Age:</strong> 20-30</span>
-        <span><strong>Group:</strong> Solo</span>
-        <span><strong>Season:</strong> Spring</span>
-        <span><strong>Budget:</strong> 1000-2000</span>
+        <span><strong>City:</strong> {filters.city_name}</span>
+        {filters.age && <span><strong>Age:</strong> {filters.age}</span>}
+        {filters.group && <span><strong>Group:</strong> {filters.group}</span>}
+        {filters.season && <span><strong>Season:</strong> {filters.season}</span>}
+        {filters.budget && <span><strong>Budget:</strong> {filters.budget}</span>}
       </div>
 
       <div className="user-cards">
-        {posts.map((user, index) => (
-          <div key={index} className="user-itinerary-card">
-            <h2>{user.username}'s Itinerary</h2>
-            <p><strong>City:</strong> {user.city}</p>
-            {user.days.map((day, idx) => (
-              <div key={idx} className="day-block">
-                <h3>{day.day}</h3>
-                <p><strong>Places Visited:</strong> {day.places.join(', ')}</p>
-                <p><strong>Restaurants:</strong> {day.restaurants.join(', ')}</p>
-                <p><strong>Mode of Transport:</strong> {day.transport}</p>
-                <p><strong>Top-rated Place:</strong> ⭐ {day.topPlace}</p>
-              </div>
-            ))}
-          </div>
-        ))}
+        {results.length === 0 ? (
+          <p>No matching itineraries found.</p>
+        ) : (
+          results.map((post, index) => (
+            <div key={index} className="user-itinerary-card">
+              <h2>Traveler {index + 1}'s Itinerary</h2>
+              <p><strong>City:</strong> {post.city_name}</p>
+              <span><strong>Accomodation:</strong> {post.accomodation}</span>
+              {post.itinerary.map((day, idx) => {
+                return (
+                  <div key={idx} className="day-block">
+                    <h3>Day {day.day_number}</h3>
+                    <p><strong>Places Visited:</strong> {day.places_visited_each_day.map(p => p.place_visited).join(', ')}</p>
+                    <p><strong>Restaurants:</strong> {day.restaurants.join(', ')}</p>
+                    <p><strong>Mode of Transport:</strong> {day.mode_of_transport}</p>
+                  </div>
+                );
+              })}
+            </div>
+          ))
+        )}
       </div>
     </div>
   );
