@@ -3,6 +3,10 @@
     color: #a6cdc4;
     min-height: 100vh;
     padding-top: 100px;
+    h2{
+        text-align: center;
+        margin-top: 80px;
+    }
 }
 
 .filter-wrapper {

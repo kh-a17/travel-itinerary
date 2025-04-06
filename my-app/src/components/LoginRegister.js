@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // 👈 import navigation hook
+import { useNavigate } from 'react-router-dom';
 import AuthForm from './AuthForm';
 import './AuthForm.css';
+import BgVideo from '../assets/Bg2.mp4'; // ✅ Make sure the path and file name match
 
 const LoginRegister = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [alertMessage, setAlertMessage] = useState('');
-  const [alertType, setAlertType] = useState(''); // 'success' or 'error'
-  const navigate = useNavigate(); // 👈 initialize hook
+  const [alertType, setAlertType] = useState('');
+  const navigate = useNavigate();
 
   const toggleForm = () => {
     setAlertMessage('');
@@ -27,11 +28,10 @@ const LoginRegister = () => {
       if (response.ok) {
         setAlertMessage(data.message);
         setAlertType('success');
-
         if (isLogin) {
           setTimeout(() => {
-            navigate('/home'); // 👈 redirect to HomePage.js
-          }, 1000); // small delay to show success message
+            navigate('/home');
+          }, 1000);
         }
       } else {
         setAlertMessage(data.message);
@@ -44,7 +44,16 @@ const LoginRegister = () => {
   };
 
   return (
-    <div className="login-register-page">
+    <div className="video-background-wrapper">
+      {/* 🔁 Background Video */}
+      <video autoPlay muted loop playsInline preload="auto" className="bg-video">
+        <source src={BgVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* ✈️ Foreground Plane Animation and Form */}
+      <div className="plane-overlay">✈</div>
+
       <div className="auth-container">
         {alertMessage && (
           <div className={`alert-message ${alertType}`}>
