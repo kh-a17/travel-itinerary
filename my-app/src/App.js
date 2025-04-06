@@ -1,13 +1,23 @@
-import React from 'react'
+import logo from './logo.svg';
 import './App.css';
-// import SubmissionFilters from './components/Submission-Filters/Submission-Filters'
-import SubmitItinerary from './components/Submit-Itinerary/Submit-Itinerary'
-import Dictaphone from "./components/Speech-to-Text/SpeechToText"
 
 function App() {
   return (
     <div className="App">
-      <SubmitItinerary />
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
