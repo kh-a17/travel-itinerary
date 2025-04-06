@@ -2,8 +2,12 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import './SearchBar.css'; // 👈 still using the same styling if you want
+import { useNavigate } from 'react-router-dom'; // ✅ import
+
 
 function SearchAndFilter() {
+  const navigate = useNavigate(); // ✅
+
   return (
     <div className="search-and-filter-container">
       <h1 className="title">Timeless Moment Awaits</h1>
@@ -66,9 +70,12 @@ function SearchAndFilter() {
           </select>
         </label>
       </div>
-      <button>
+      <div className='button-wrapper'>
+
+      <button className='submit-button' onClick={()=>navigate('/view-post')}>
               Submit
             </button>
+      </div>
     </div>
   );
 }

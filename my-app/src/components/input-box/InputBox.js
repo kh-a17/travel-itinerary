@@ -1,10 +1,10 @@
 import './InputBox.css';
 
-const InputBox = ({ placeholder }) => {
+const InputBox = ({ placeholder, className }) => {
 
     return (
         <input
-            className='input-wrapper'
+            className={`input-wrapper ${className}`}
             placeholder={`${placeholder}`}
         />
     );

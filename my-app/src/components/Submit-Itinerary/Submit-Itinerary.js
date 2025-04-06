@@ -36,6 +36,13 @@ const SubmitItinerary = () => {
             <FilterTile filter="4" filterSelected={() => nonOfDaysSelected(4)} className="square-tile" />
             <FilterTile filter="5" filterSelected={() => nonOfDaysSelected(5)} className="square-tile" />
           </div>
+
+          <h2>Accomodation</h2>
+          <div>
+            <div class="filter-wrapper">
+              <InputBox placeholder='Please enter place' className='acco-input' />
+            </div>
+          </div>
         </>
         :
         <div>
