@@ -62,19 +62,32 @@ html, body, #root {
 /* Title and subtitle */
 .title {
   text-align: center;
-  font-weight: bold;
-  font-size: 2rem;
-  margin-bottom: 10px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.subtitle {
-  text-align: center;
-  font-weight: bold;
-  font-size: 0.95rem;
-  margin-bottom: 25px;
-  color: #a6cdc4;
-  font-style: italic;
+.App-link {
+  color: #61dafb;
 }
 
 body {
@@ -125,24 +138,7 @@ body {
     transform: translate(-10vw, -10vh) rotate(0deg);
     opacity: 0;
   }
-  10% {
-    opacity: 1;
+  to {
+    transform: rotate(360deg);
   }
-  25% {
-    transform: translate(20vw, 10vh) rotate(15deg);
-  }
-  50% {
-    transform: translate(40vw, -5vh) rotate(-10deg);
-  }
-  75% {
-    transform: translate(70vw, 15vh) rotate(20deg);
-  }
-  100% {
-    transform: translate(110vw, -10vh) rotate(0deg);
-    opacity: 0;
-  }
-}
-.App {
-  text-align: center;
-  background-color: #282333;
 }
