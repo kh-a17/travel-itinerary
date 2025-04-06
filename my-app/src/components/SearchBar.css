@@ -143,16 +143,20 @@ body {
 }
 
 .search-and-filter-container {
-  width: 100%;
-  max-width: 550px;
-  margin: 60px auto;
-  padding: 40px 30px;
-  border-radius: 20px;
-  background: rgb(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  color: #ffffff;
-  backdrop-filter: blur(6px);
+  padding-top: 100px; /* Makes space below fixed navbar */
+  padding-bottom: 60px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
 }
+
+/* Optional: Ensure body scrolls */
+body, html, #root {
+  height: 100%;
+  overflow-y: auto;
+}
+
 
 /* 🔍 Search Bar */
 .search-bar {
