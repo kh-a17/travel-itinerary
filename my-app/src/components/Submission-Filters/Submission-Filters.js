@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import './SubmissionFilters.css';
 import FilterTile from '../filter-tile/FilterTile'
+import { useNavigate } from 'react-router-dom'; 
 
 const SubmissionFilters = () => {
+  const navigate = useNavigate();
 
   const [filter, selectFilter] = useState('age')
   const filterSelected = () => {
@@ -16,7 +18,7 @@ const SubmissionFilters = () => {
       selectFilter('budget')
     }
     else if(filter === 'budget'){
-      console.log('redirect to submission post');
+      navigate('/submit-itinerary');
     }
   }
 
