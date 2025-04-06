@@ -1,7 +1,83 @@
-.view-page-wrapper{
+/* Full Page Styling */
+.view-page {
+    padding: 30px;
+    background-color: #282333;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
     color: #a6cdc4;
-    text-align: center;
-    margin-top: 200px;
-    font-size: 20px;
-    font-weight: 600;
-}
+  }
+  
+  /* Horizontal Filter Bar */
+  .filter-bar {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 25px;
+    background-color: #3e394c;
+    padding: 15px 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  .filter-bar span {
+    margin: 8px 12px;
+    white-space: nowrap;
+  }
+  
+  /* Each user's full itinerary card */
+  .user-itinerary-card {
+    background-color: #3e394c;
+    border-radius: 12px;
+    padding: 25px 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    transition: transform 0.2s ease;
+  }
+  
+  .user-itinerary-card:hover {
+    transform: scale(1.01);
+  }
+  
+  /* Username Header */
+  .user-itinerary-card h2 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+  }
+  
+  /* Day-wise section inside each user card */
+  .day-block {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 15px 20px;
+    margin-top: 15px;
+    border-radius: 8px;
+  }
+  
+  .day-block h3 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .day-block p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+  }
+  
+  .day-block strong {
+    color: #a6cdc4;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .filter-bar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .filter-bar span {
+      margin: 6px 0;
+    }
+  }
+  

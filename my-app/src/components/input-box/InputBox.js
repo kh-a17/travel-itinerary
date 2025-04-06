@@ -7,6 +7,7 @@ const InputBox = ({ placeholder, className }) => {
             className={`input-wrapper ${className}`}
             placeholder={`${placeholder}`}
         />
+        
     );
 }
 

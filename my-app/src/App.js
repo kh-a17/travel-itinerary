@@ -8,6 +8,7 @@ import SubmitItinerary from './components/Submit-Itinerary/Submit-Itinerary';
 import ViewPage from './components/ViewPage/ViewPage'
 import ChoosePostType from './components/ChoosePostType/ChoosePostType'
 import VoiceInput from './components/Speech-to-Text/SpeechToText'
+import ThankYou from './components/ThankYou';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/view-post" element={<ViewPage />} />
         <Route path="/post-type" element={<ChoosePostType />} />
         <Route path="/speech-to-text" element={<VoiceInput />} />
+        <Route path="/thank-you" element={<ThankYou />} />
       </Routes>
     </Router>
   );
